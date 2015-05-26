@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Leapzza</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <script type="text/x-handlebars">
+        <img id="cursor" src="images/Pepperoni.png" class="topping"/>
+        {{outlet}}
+    </script>
+
+    <script id="pizza" type="text/x-handlebars">
+        <div class="col-md-12">
+            <center>
+                <img src="images/leapzza.png" />
+            </center>
+        </div>
+        <div class="col-md-4" id="board">
+            <canvas id="myCanvas" width="375" height="375"></canvas>
+            <img src="images/pizzaboard.png" />
+        </div>
+        <div class="col-md-4 col-md-offset-4" id="ingredients">
+            <img src="images/toppingsPic.png" />
+        </div>
+        <div id="toppings" class="col-md-offset-4 col-md-4">
+            <br>
+            <br>
+            {{#each topping in controller.filteredToppings}}
+             <img {{bind-attr src=topping.image}} {{action "chooseTopping" topping.image}} class="bowl"/>
+            {{/each}}
+        </div>
+    </script>
+
+    <!--Libraries-->
+    <script src="js/libs/vendor/jquery.js"></script>
+    <script src="https://js.leapmotion.com/leap-0.6.4.js"></script>
+    <script src="js/libs/ember-template-compiler-1.10.0.js"></script>
+    <script src="js/libs/ember-1.10.0.debug.js"></script>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <!--Application-->
+    <script src="js/extern.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/views.js"></script>
+    <script src="js/controllers.js"></script>
+</body>
+</html>

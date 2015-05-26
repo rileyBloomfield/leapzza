@@ -1,0 +1,40 @@
+body {
+	cursor: none;
+  overflow: hidden;
+  background: url('../images/bg.jpg');
+  background-size:100%;
+  background-repeat:no-repeat;
+}
+
+#cursor {
+	position: absolute;
+	z-index: 100;
+}
+
+#board {
+	position: relative;
+}
+
+#myCanvas {
+	position: absolute;
+	z-index: 50;
+	left: 340px;
+	top: 50px;
+	border-radius: 182px;
+}
+
+img {
+	background-color: transparent;
+	border: none;
+}
+
+.bowl {
+	height: 100px;
+	width: 100px;
+	margin: 7px;
+	display: inline-block;
+}
+
+.topping {
+	height: 100px;
+}
